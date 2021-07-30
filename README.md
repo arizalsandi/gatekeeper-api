@@ -32,10 +32,44 @@ And use this to enable Kafka service :
 For reference, please use this official site to additional information :
 [Apache Kafka Quickstart](https://kafka.apache.org/quickstart)
 
+Run `gatekeeper.py` to enable gatekeeper API and run `kafka_consumer.py` to start consume Topic from API
+
+After Gatekeeper and Kafka Consumer started, go to Insomnia and use this link (http://127.0.0.1:5000/activities) and post the Payload like bellow here to create the Event
+
+```
+{
+    "activities": [
+        {
+            "operation": "insert",
+            "table": "table100",
+            "column":[
+                {
+                "name":"col101",
+                "type":"INTEGER",
+                "value":101
+                },
+						{
+                "name":"col102",
+                "type":"INTEGER",
+                "value":102
+                },
+						{
+                "name":"col103",
+                "type":"INTEGER",
+                "value":103
+              }
+				]
+		}
+ ]
+}
+```
 
 
 
+If the payload valid, it will return Json notification like this :
 
+![Screenshot from 2021-07-30 16-04-44](https://user-images.githubusercontent.com/84316622/127629658-33ab3e71-8d8f-40a4-b77f-11d3c45516f6.png)
 
+For invalid case, im still only add for Invalid Operation and for the other case will be improving later.
 
 
