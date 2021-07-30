@@ -1,4 +1,4 @@
-# Gatekeepr API : Payload Datastream Processing
+# Gatekeeper API : Payload Datastream Processing
 
 Case : Create some Gatekeeper API to validate and processing incoming JSON message which come from our Backend team
 
